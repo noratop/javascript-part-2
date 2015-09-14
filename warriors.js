@@ -51,10 +51,13 @@ function Warrior(name,gender){
 	this.level = 1;
 	this.weapon = 'wooden sword';
 	this.power = 100*Math.random();
-	this.fight = function(){
+}
+
+Warrior.prototype = {
+	fight : function(){
 		console.log(' rushes to the arena with ');
-	};
-	this.faceoff = function(opponent){
+	},
+	faceoff : function(opponent){
 		if (this.power === opponent.power) {console.log("The fight between "+this.name+" and "+opponent.name+" ends to a tie");}
 		else if (this.power > opponent.power) {console.log(this.name + " beats "+opponent.name+" with a " + this.weapon);}
 		else {console.log(this.name + " was too weak. " + opponent.name + " won the game in 5 seconds.")}
