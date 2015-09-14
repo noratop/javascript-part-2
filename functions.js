@@ -86,3 +86,36 @@ num:11},
 {name:'obj5',
 num:7},
 ].map(squareNum);
+
+
+/* Create a function called operationMaker that takes only a string called operation as argument. This string could be “add”, “subtract”, “mult” or “div”. 
+Your function will return a function that will take two numbers and return the result of running operation on these numbers.*/
+
+function operationMaker(operation){
+    if (typeof operation === "string"){
+	    switch(operation) {
+	        case 'add':
+	            return function(num1,num2){return num1+num2;};
+	            break;
+	        case 'subtract':
+	            return function(num1,num2){return num1-num2;};
+	            break;
+	        case 'mult':
+	            return function(num1,num2){return num1*num2;};
+	            break;
+	        case 'div':
+	            return function(num1,num2){return num1/num2;};
+	            break;
+	        default:
+	        return function(){return 0};
+	    }
+	}
+}
+
+var adder = operationMaker('add');
+var sum = adder(5, 10);
+console.log(sum);
+
+var multiplier = operationMaker('mult');
+var product = multiplier(5, 10);
+console.log(product);
