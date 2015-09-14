@@ -48,3 +48,15 @@ listOfEmail.sort(function(a,b){
     if (a.email.toLowerCase() < b.email.toLowerCase()) return -1;
     return 0;
 });
+
+
+/*Create a function that can be used with Array.prototype.map. 
+This function should take a number and return its square. 
+Then, use this function with map on an array of numbers to check the result.*/
+
+function square(num){
+    return Math.pow(num,2);
+}
+
+//exemple of use for map with the square function
+[2,4,6,9].map(square);
