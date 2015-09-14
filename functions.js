@@ -60,3 +60,29 @@ function square(num){
 
 //exemple of use for map with the square function
 [2,4,6,9].map(square);
+
+
+/*Create a function that can be used with Array.prototype.map. 
+This function should be able to take an object and square its “num” property. 
+Then, use this function with map on an array of objects each containing a “num” property.*/
+
+function squareNum(obj){
+	if (typeof obj === 'object'){
+		obj.num = Math.pow(obj.num,2);
+		return obj;
+	}
+}
+
+
+//Exemple of use of map with the squareNum function
+[{name:'obj1',
+num:2},
+{name:'obj2',
+num:4},
+{name:'obj3',
+num:3},
+{name:'obj4',
+num:11},
+{name:'obj5',
+num:7},
+].map(squareNum);
