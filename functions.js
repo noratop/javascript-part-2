@@ -13,16 +13,3 @@ function compareStringsForSort(a,b) {
 
 //Exemple of use for the compareStringsForSort with sort
 ['word1', 'longestWordToGoFirst','word2'].sort(compareStringsForSort);
-
-//******OFFSCOPE****** function longestWord as created in the javascript workshop part-1, but using the new function compareStringsForSort
-function longestWord(phrase){
-    
-    var wordList = [];
-    
-    if (typeof phrase === 'string'){
-        wordList = phrase.split(/[\s,./'\!}{"|?><+_)(*&^!\[\]]/g).sort(compareStringsForSort);
-        
-        return wordList.shift();
-    }
-    else return 'Please provide a phrase';
-}
