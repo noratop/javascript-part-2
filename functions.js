@@ -67,9 +67,14 @@ This function should be able to take an object and square its “num” property
 Then, use this function with map on an array of objects each containing a “num” property.*/
 
 function squareNum(obj){
-	if (typeof obj === 'object'){
-		obj.num = Math.pow(obj.num,2);
-		return obj;
+	
+		if (typeof obj === 'object'){
+
+			var returnObj = Object.create(obj);
+
+			returnObj.num = Math.pow(returnObj.num,2);
+
+			return returnObj;
 	}
 }
 
