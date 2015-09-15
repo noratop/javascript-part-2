@@ -61,3 +61,14 @@ Tile.prototype = {
 	    }
 	}
 }
+
+var map20by20 = [];
+for (var j = 1; j <= 20; j++){
+	var newRow = [];
+		for (var i= 1; i <= 20; i++){
+			newRow.push(new Tile(j,i));
+		}
+
+	map20by20.push(newRow);
+	//console.log(newRow);
+}
