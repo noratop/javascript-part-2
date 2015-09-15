@@ -18,7 +18,7 @@ function Warrior(name,gender){
 	else this.gender = 'M';
 	this.level = 1;
 	this.weapon = 'wooden sword';
-	this.power = 100*Math.random();
+	this.power = Math.round(100*Math.random());
 	this.fight = function(){
 		console.log(' rushes to the arena with ');
 	};
