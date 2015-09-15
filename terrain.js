@@ -15,7 +15,7 @@ burn: if the object is frozen, then it will become normal. if the object is norm
 function Tile(x,y){
 	this.x = x;
 	this.y = y;
-	this.height = 3*Math.random();
+	this.height = Math.round(3*Math.random());
 
 	var randomType = 3*Math.random();
 
@@ -72,3 +72,33 @@ for (var j = 1; j <= 20; j++){
 	map20by20.push(newRow);
 	//console.log(newRow);
 }
+
+
+function outputMap(map){
+	if (map instanceof Array){
+		map.forEach(function(element){
+			var heightsInRow = [];
+			element.forEach(function(elt){heightsInRow.push(elt.height);});
+			console.log(heightsInRow.join(' '));
+		});
+	}
+}
+
+outputMap(map20by20);
+
+
+console.log("-- Same map below after randomly freeze/burn the tiles:")
+
+function randomFreezeBurn(map){
+	if (map instanceof Array){
+		map.forEach(function(element){
+			element.forEach(function(elt){
+				if (2*Math.random()<1){elt.freeze();}
+				else {elt.burn();}
+			});
+		});
+	} 
+	return map
+}
+
+outputMap(randomFreezeBurn(map20by20));
